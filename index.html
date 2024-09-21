@@ -1,6 +1,9 @@
 <!DOCTYPE-html>
 <html-lang="en">
  <head>
+ <script>
+  bigBang = new Date();
+</script>
  <meta-charset="UTF-8">
  <meta-name="viewport"-content="width=device-width,-initial-scale=1.0">
  <title>my-Home-page</title>
@@ -30,14 +33,14 @@
     color:white;
   }
  </style>
+
  <script>
-    console.time('bigBang');
-    let timerBegin = newDate();
- </script>
+  console.log("加载CSS代码:"+(new Date() - bigBang) + 'ms')
+</script>
 </head>
 <body style="height:717px">
  <header>
-  页面渲染时间:0ms
+ 
  </header>
  <main>
   <p id="word">abandon</p>
@@ -51,16 +54,16 @@
 
    let myBody = document.querySelector('body');
        myBody.style.height = innerHeight - 15 + 'px' ;
-       console.timeEnd('bigBang') ;
-       myBody.querySelector('header').textContent = "页面渲染时间：" + ( new Date() - timerBegin ) + 'ms';
+    //   console.timeEnd('bigBang') ;
+    //   myBody.querySelector('header').textContent = "页面渲染时间：" + ( new Date() - timerBegin ) + 'ms';
       
        console.time('xmb') ;
        timerBegin = new Date() ;
-       let i= 1 ;
+      /* let i= 1 ;
        while (  i < 2**32 / 40 ){
           i ++ ; 
          }
-       console.timeEnd('xmb') ;
+       console.timeEnd('xmb') ;*/
  
        let strCET6 = '' ;
        let arrCET6 = [] ;
