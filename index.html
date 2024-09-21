@@ -48,7 +48,7 @@
  20223491张益泽
  </footer>
  <script>
-   //myBody.style.height=innerHeight-15 +'px';
+
    let myBody = document.querySelector('body');
        myBody.style.height = innerHeight - 15 + 'px' ;
        console.timeEnd('bigBang') ;
@@ -63,8 +63,8 @@
        console.timeEnd('xmb') ;
  
        let strCET6 = '' ;
-   let arrCET6 = [] ;
-   fetch('cet6.txt')
+       let arrCET6 = [] ;
+   fetch('https://stonegentleman.github.io/cet6.txt')
    .then(res => res.text())
    .then(txt => {
                  strCET6 = txt ;
@@ -80,14 +80,11 @@
                     select('#pron').textContent = pron ;
                     select('#chinese').textContent =chinese ;
                 }) ;
-   
    function select(str){
     let dom = document.querySelector(str);
     return dom ;
    }
    
-
-
  </script>
  </body>
 </html>
