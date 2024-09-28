@@ -74,7 +74,7 @@ cet6
  </header>
  <nav>
   <button id="randWord">随机单词</button>
-  <button  id="loadWorrd">读入单词</button>
+  <button  id="loadWord">读入单词</button>
  </nav>
   <main>
   <p id="word">abandon</p>
@@ -99,7 +99,7 @@ cet6
          }
        console.timeEnd('xmb') ;*/
  
-    /*   let strCET6 = '' ;
+  /*  let strCET6 = '' ;
        let arrCET6 = [] ;
    fetch('https://stonegentleman.github.io/cet6.txt')
    .then(res => res.text())
@@ -120,17 +120,19 @@ cet6
    function select(str){
     let dom = document.querySelector(str);
     return dom ;
-   }*/
+   }
   
  </script>
   <script>
     let UI = {} ;
+    let loadCet = select('button#loadWord');
+    let randWord= select('button#randWord');
      UI.log = function(s){
      select('footer').textContent = s ;
      } ;
      UI.headerLog = function(s){
      select('header').textContent = s ;
-     } ;
+     } ;  
     
      select('button#loadWord').onclick = function(){
        Model.CET6 = Model.cet6String.split('\r\n') ;
@@ -148,8 +150,21 @@ cet6
            UI.log("请点“读入单词”按钮");
        }else{
            let rand = Math.floor(Math.random() * Model.CET6.length) ;
-           UI.headerLog(Model.CET6[rand] ) ;
+         
            UI.log("我已经读入了"+ Model.CET6.length + "单词!")
+           
+     
+        let str=Model.CET6[rand];
+       
+        let begin=str.indexOf('\t');
+        let end=str.lastIndexOf('\t');
+        console.log('b:'+begin+'e:'+end);
+        let en=str.slice(0,begin);
+        let pr=str.slice(begin+1,end);
+        let cn=str.slice(end+1);
+        select('p#word').textContent=en;
+        select('p#pron').textContent=pr;
+        select('p#chinese').textContent=cn;
        }
        
      } ;
